@@ -8,7 +8,7 @@
     --navigation-hover-color: var(--content-font-color)/*#E85F5C*/;
     --navigation-hover-background: var(--content-background)/*#555*/;
     --navigation-active-color: var(--content-background);
-    --navigation-active-background: rgba(220,220,220,0.2);
+    --navigation-active-background: rgba(50,50,50,0.2);
   }
 
 /* Fonts and basic settings*/
