@@ -66,6 +66,12 @@
    padding: 10px;
    text-decoration: none;
   }
+
+  .sidebarContent h1 a {
+    text-decoration: none;
+    color: var(--sidebar-font-color);
+  }
+
   #sidebarImage img {
       width: 70%;
       margin: auto;
