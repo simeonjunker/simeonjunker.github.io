@@ -230,7 +230,12 @@
       text-align: center;
       float: none;
     }
-
+    .sidebar h1 {
+      padding-left:10px;
+    }
+    .sidebar {
+      padding-left:0;
+    }
     .sidebarText p {
       display: none;
     }
