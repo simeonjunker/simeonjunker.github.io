@@ -11,7 +11,7 @@
     --navigation-active-background: rgba(220,220,220,0.2);
   }
 
-/* Fonts */
+/* Fonts and basic settings*/
   @font-face {
   font-family: 'quattrocento';
   src: url('fonts/QuattrocentoSans-Regular.ttf') format('truetype');
@@ -28,6 +28,7 @@
   html {
     font-family:quattrocento; font-size:1em;
     color: var(--content-font-color);
+    background-color:var(--content-background);
   }
 
   h1 {
@@ -35,7 +36,11 @@
   }
 
   p {
-    font-size: 1.5em;
+    font-size: 1.15em;
+  }
+
+  body {
+    margin:0;
   }
 
   .highlight{
@@ -90,12 +95,26 @@
   div.content {
    margin-left: 400px;
    padding:40px;
-   height: 1000px;
+   max-width:1000px;
+   background-color: var(--content-background);
   }
 
   .content h1 {}
 
 /* @media settigs for different screen sizes */
+
+  @media screen and (min-width:1481px) {
+    /* limit overall width */
+
+    .sidebar{
+      left: calc((100vw - 1400px) / 2);
+    }
+    div.content {
+      margin-left: calc(((100vw - 1400px) / 2 + 400px))
+    }
+
+  }
+
   @media screen and (min-width:1001px) {
     .sidebarContent .sidebarText{
      display: block;
