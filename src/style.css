@@ -1,0 +1,209 @@
+/* Colors */
+  :root {
+    --content-font-color: black;
+    --content-background: #FFFFFC /*rgb(220,220,220)*/;
+    --sidebar-font-color: var(--content-background) /*rgb(220,220,220)*/;
+    --sidebar-background:#247BA0 /*rgb(50,50,50)*/;
+    --highlight-color: var(--sidebar-background);
+    --navigation-hover-color: var(--content-font-color)/*#E85F5C*/;
+    --navigation-hover-background: var(--content-background)/*#555*/;
+    --navigation-active-color: var(--content-background);
+    --navigation-active-background: rgba(220,220,220,0.2);
+  }
+
+/* Fonts */
+  @font-face {
+  font-family: 'quattrocento';
+  src: url('fonts/QuattrocentoSans-Regular.ttf') format('truetype');
+  }
+  @font-face{
+    font-family:'oswald';
+    src:url('fonts/Oswald-Regular.ttf') format('truetype');
+  }
+  @font-face{
+    font-family:'quattrocentoBold';
+    src:url('fonts/QuattrocentoSans-Bold.ttf') format('truetype')
+  }
+
+  html {
+    font-family:quattrocento; font-size:1em;
+    color: var(--content-font-color);
+  }
+
+  h1 {
+    font-family: oswald; font-size: 4em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  .highlight{
+    color: var(--highlight-color);
+  }
+
+/* Sidebar */
+  .sidebar {
+    /* Side Navigation */
+   margin: 0;
+   padding:10px;
+   width:400px;
+   background-color: var(--sidebar-background);
+   position: fixed;
+   height: 100%;
+   overflow: hidden; /* auto */
+   color: var(--sidebar-font-color);
+  }
+  .sidebar .sidebarText a {
+    /* Sidebar links */
+   display: block;
+   color: var(--sidebar-font-color);
+   padding: 10px;
+   text-decoration: none;
+  }
+  #sidebarImage img {
+      width: 70%;
+      margin: auto;
+      display: block;
+      border-radius: 50%;
+  }
+  .sidebar .sidebarText a:hover:not(.active) {
+    /* Links on mouse-over */
+   background-color: var(--navigation-hover-background) !important;
+   color: var(--navigation-hover-color) !important;
+  }
+  #MenuButton {
+    /* default: invisible; set visible in @media settings for smaller screens*/
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+  }
+  #PageHome .ButtonHome, #PageCV .ButtonCV, #PageResearch .ButtonResearch, #PageTeaching .ButtonTeaching, #PageContact .ButtonContact {
+  /* highlight current page in navigation */
+    font-family: quattrocentoBold;
+    color: var(--navigation-active-color);
+    background-color: var(--navigation-active-background);
+  }
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+   margin-left: 400px;
+   padding:40px;
+   height: 1000px;
+  }
+
+  .content h1 {}
+
+/* @media settigs for different screen sizes */
+  @media screen and (min-width:1001px) {
+    .sidebarContent .sidebarText{
+     display: block;
+    }
+    .sidebar .sidebarContent {
+      position: absolute;
+      width: 100%;
+      bottom: 50px;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar .sidebarContent h1 {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    /* On screens that are less than 1000px wide, make the sidebar into a topbar */
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar h1 {
+      font-size: 2em;
+    }
+    .sidebar a {
+      float: left;
+    }
+    div.content {
+      margin-left: 0;
+    }
+    .sidebarText p {
+      font-size: 1.25em;
+    }
+    .sidebar #sidebarImage {
+      display: none;
+    }
+
+    /* Menu */
+    .sidebarContent .sidebarText{
+      display: none;
+    }
+    #MenuButton {
+      display: block;
+    }
+    #MenuButton * {
+      background-color:
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+
+/* hamburger menu icon */
+  #hamburger {
+    display: inline-block;
+    cursor: pointer;
+    border:4px solid var(--sidebar-background);
+    padding:2px;
+    transition: 0.4s;
+  }
+
+  #hamburger:hover {
+    border-color: var(--navigation-hover-background) !important;
+    color: var(--navigation-hover-color) !important;
+    /*transform:rotate(-5deg);*/
+  }
+
+  #hamburger:hover .bar2 {
+    width:30px;
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 6px;
+    background-color: var(--sidebar-font-color);
+    margin: 6px 0 6px 0/*6px 0*/;
+    transition: 0.4s;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .bar1 {
+    margin-top:0;
+  }
+  .bar3 {
+    margin-bottom:0;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
+    transform: rotate(-45deg) translate(-8px, 9px) ;
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -9px) ;
+  }
