@@ -77,13 +77,7 @@
    background-color: var(--navigation-hover-background) !important;
    color: var(--navigation-hover-color) !important;
   }
-  #MenuButton {
-    /* default: invisible; set visible in @media settings for smaller screens*/
-    display: none;
-    position: absolute;
-    top: 35px;
-    right: 20px;
-  }
+
   #PageHome .ButtonHome, #PageCV .ButtonCV, #PageResearch .ButtonResearch, #PageTeaching .ButtonTeaching, #PageContact .ButtonContact {
   /* highlight current page in navigation */
     font-family: quattrocentoBold;
@@ -101,6 +95,67 @@
 
   .content h1{
     margin-top: 0;
+  }
+
+/* hamburger menu icon */
+
+  #MenuButton {
+    /* default: invisible; set visible in @media settings for smaller screens*/
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 20px;
+  }
+
+  #hamburger {
+    display: inline-block;
+    cursor: pointer;
+    border:4px solid var(--sidebar-background);
+    padding:2px;
+    transition: 0.4s;
+  }
+
+  #hamburger:hover {
+    border-color: var(--navigation-hover-background) !important;
+    color: var(--navigation-hover-color) !important;
+    /*transform:rotate(-5deg);*/
+  }
+
+  #hamburger:hover .bar2 {
+    width:30px;
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 6px;
+    background-color: var(--sidebar-font-color);
+    margin: 6px 0 6px 0/*6px 0*/;
+    transition: 0.4s;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .bar1 {
+    margin-top:0;
+  }
+  .bar3 {
+    margin-bottom:0;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
+    transform: rotate(-45deg) translate(-8px, 9px) ;
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -9px) ;
   }
 
 /* @media settigs for different screen sizes */
@@ -174,56 +229,4 @@
       text-align: center;
       float: none;
     }
-  }
-
-/* hamburger menu icon */
-  #hamburger {
-    display: inline-block;
-    cursor: pointer;
-    border:4px solid var(--sidebar-background);
-    padding:2px;
-    transition: 0.4s;
-  }
-
-  #hamburger:hover {
-    border-color: var(--navigation-hover-background) !important;
-    color: var(--navigation-hover-color) !important;
-    /*transform:rotate(-5deg);*/
-  }
-
-  #hamburger:hover .bar2 {
-    width:30px;
-  }
-
-  .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 6px;
-    background-color: var(--sidebar-font-color);
-    margin: 6px 0 6px 0/*6px 0*/;
-    transition: 0.4s;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .bar1 {
-    margin-top:0;
-  }
-  .bar3 {
-    margin-bottom:0;
-  }
-
-  /* Rotate first bar */
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
-    transform: rotate(-45deg) translate(-8px, 9px) ;
-  }
-
-  /* Fade out the second bar */
-  .change .bar2 {
-    opacity: 0;
-  }
-
-  /* Rotate last bar */
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -9px) ;
   }
