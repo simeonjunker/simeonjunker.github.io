@@ -35,8 +35,9 @@
     font-family: oswald; font-size: 4em;
   }
 
-  p {
+  p, li {
     font-size: 1.15em;
+    line-height: 1.25;
   }
 
   body {
@@ -70,6 +71,8 @@
   .sidebarContent h1 a {
     text-decoration: none;
     color: var(--sidebar-font-color);
+    width: 100%;
+    display: block;
   }
 
   #sidebarImage img {
@@ -95,12 +98,24 @@
   div.content {
    margin-left: 400px;
    padding:40px;
-   max-width:1000px;
+   max-width:960px;
    background-color: var(--content-background);
   }
 
   .content h1{
     margin-top: 0;
+  }
+
+  .contentList {
+    line-height: 1.25;
+  }
+
+  .contentList li {
+    margin: 0 0 5px 0;
+  }
+
+  .contentList ul {
+    margin: 0 0 20px 0;
   }
 
 /* hamburger menu icon */
@@ -204,7 +219,7 @@
       }
     }
 
-    @media screen and (max-height: 610px) {
+    @media screen and (max-height: 500px) {
       /* hide image if screen is not high enough */
       .sidebarContent {
         top: 40px;
