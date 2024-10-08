@@ -81,6 +81,13 @@
       display: block;
       border-radius: 50%;
   }
+
+  #sidebarImage img {
+    max-width: 70%;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+}
   .sidebar .sidebarText a:hover:not(.active) {
     /* Links on mouse-over */
    background-color: var(--navigation-hover-background) !important;
@@ -208,6 +215,10 @@
       text-align: center;
     }
 
+    #mainBodyProfileImage {
+      display: none;
+    }
+
     @media screen and (max-height: 800px) {
       /* shrink image if screen is not high enough */
       .sidebarContent h1 {
@@ -252,6 +263,10 @@
     }
     .sidebar #sidebarImage {
       display: none;
+    }
+
+    #mainBodyProfileImage {
+      display: block;
     }
 
     /* Menu */
