@@ -88,6 +88,13 @@
     display: block;
     border-radius: 50%;
 }
+
+  #mainBodyProfileImage img {
+    max-width: 90%;
+    /*margin: auto;*/
+    display: block;
+  };
+
   .sidebar .sidebarText a:hover:not(.active) {
     /* Links on mouse-over */
    background-color: var(--navigation-hover-background) !important;
